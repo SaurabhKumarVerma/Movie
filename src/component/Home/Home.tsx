@@ -1,16 +1,30 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import {SafeAreaView, View} from 'react-native';
+import React, {useEffect} from 'react';
+import {RootState} from '../../redux/store';
+import {useAppDispatch, useAppSelector} from '../../redux/hook';
+import {movieList} from '../../redux/slice/MovieListSlice';
+import ScreenLoader from '../../Base/ScreenLoader';
+import TradingList from './TradingList';
 
-interface IHome {}
+const Home = () => {
+  const movieDataList = useAppSelector((state: RootState) => state.movie);
+  const dispatch = useAppDispatch();
 
-const Home = (props: IHome) => {
+  useEffect(() => {
+    dispatch(movieList());
+  }, []);
+
   return (
-    <View>
-      <Text>Home</Text>
-    </View>
+    <SafeAreaView style={{marginHorizontal: 20, flex: 1}}>
+      {movieDataList.isLoading && (
+        <ScreenLoader isVisible={movieDataList.isLoading} />
+      )}
+      {/* <View style={{marginTop: 50}}> */}
+      <TradingList />
+      {/* </View> */}
+    </SafeAreaView>
   );
 };
 
 export default Home;
-
-const styles = StyleSheet.create({});

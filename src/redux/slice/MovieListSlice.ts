@@ -3,7 +3,7 @@ import {IMovie} from '../../types/interface/IMovie.interface';
 import {RootState} from '../store';
 import apiService from '../../service/api';
 
-interface IMovieReduxState {
+export interface IMovieReduxState {
   movieData: undefined | IMovie;
   isLoading: boolean;
   isError: boolean;
