@@ -43,3 +43,11 @@ yarn ios
 If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ shortly provided you have set up your emulator correctly.
 
 This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+
+### Android Demo
+
+
+
+
+https://github.com/SaurabhKumarVerma/Movie/assets/20206707/9fc2bf0a-d9ae-48ce-ac68-5fd7530be8a1
+
