@@ -20,9 +20,7 @@ const Home = () => {
       {movieDataList.isLoading && (
         <ScreenLoader isVisible={movieDataList.isLoading} />
       )}
-      {/* <View style={{marginTop: 50}}> */}
       <TradingList />
-      {/* </View> */}
     </SafeAreaView>
   );
 };
